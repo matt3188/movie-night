@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import {getMovies} from '../utils/api';
 
 import SearchBar from '../components/SearchBar';
+import MovieList from '../components/MovieList'
+
 class Movie extends Component {
   constructor( props ) {
     super( props );
@@ -30,6 +32,7 @@ class Movie extends Component {
     return (
       <div className="container">
         <SearchBar onTermChange={ this.handleTermChange } />
+        <MovieList {...this.state} />
       </div>
     )
   }
