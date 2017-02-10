@@ -5,8 +5,6 @@ class Home extends Component {
     return (
       <div className="app-home">
         <div className="home-bg" />
-          </div>
-        </div>
       </div>
     )
   }
