@@ -5,6 +5,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import App from './components/App';
 
 import Home from './views/Home';
+import Movies from './views/Movies';
 
 import './index.css';
 
