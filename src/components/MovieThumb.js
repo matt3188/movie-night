@@ -12,12 +12,12 @@ class MovieThumb extends Component {
     this.menuToggle = this.menuToggle.bind(this)
   }
 
-  menuToggle = (e) => {
-
+  menuToggle = () => {
     this.setState({
       faved: !this.state.faved
     });
   }
+
   render() {
     return (
       <li className="movie-thumb">
