@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import {discoverMovies} from '../utils/api';
+import Discover from '../components/Discover'
+
 class Home extends Component {
 
   constructor( props ) {
@@ -23,6 +25,7 @@ class Home extends Component {
     return (
       <div className="app-home">
         <div className="home-bg" />
+        <Discover {...this.state} />
       </div>
     )
   }
