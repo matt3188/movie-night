@@ -18,7 +18,7 @@ class Movie extends Component {
   movieLookUp( term ) {
     getMovies( term ).then( ( res ) => {
       this.setState({
-        movies: res.Search
+        movies: res.results
       });
     });
   }
