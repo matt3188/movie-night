@@ -1,0 +1,21 @@
+.discover-thumb {
+  display: flex;
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.discover-overview {
+  width: 50%;
+}
+.discover-overview {
+  background-color: #FFF;
+  color: #000;
+  padding: 10px;
+}
+.discover-overview .movie-title {
+  margin: 0;
+}
+.discover-image img {
+  height: 100%;
+}
