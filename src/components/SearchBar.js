@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Debounce } from 'react-throttle';
+ 
 import './searchBar.css';
 
 class SearchBar extends Component {
@@ -19,11 +21,15 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search">
-        <input
-          className="search-bar"
-          minLength={ 3 }
-          placeholder="Search..."
-          onChange={ event => this.onInputChange( event.target.value ) } />
+
+        <Debounce time="500" handler="onChange">
+          <input
+            className="search-bar"
+            minLength={ 3 }
+            placeholder="Search..."
+            onChange={ event => this.onInputChange( event.target.value ) } />
+        </Debounce>
+
       </div>
     )
   }
