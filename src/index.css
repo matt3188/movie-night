@@ -2,7 +2,9 @@
   font-family: 'Lato', cursive;
   src: url('https://fonts.googleapis.com/css?family=Lato')
 }
-
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
@@ -55,8 +57,8 @@ body {
 }
 .nav-list li a.active:after {
   content: "";
-  min-width: 70px;
-  width: 15%;
+  width: 100%;
+  max-width: 35%;
   margin: 0 auto;
   height: 4px;
   background-color: #ef1a51;
