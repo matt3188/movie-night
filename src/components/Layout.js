@@ -14,7 +14,8 @@ class Layout extends Component {
             <ul role="navigation" className="list nav-list">
               <li><NavLink to="/" onlyActiveOnIndex>Home</NavLink></li>
               <li><NavLink to="/movie">Movie</NavLink></li>
-              <li><NavLink to="/Television">TV</NavLink></li>
+              <li><NavLink to="/television">TV</NavLink></li>
+              <li><NavLink to="/watchlist">♥</NavLink></li>
             </ul>
           </div>
         </div>
