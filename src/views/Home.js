@@ -24,7 +24,6 @@ class Home extends Component {
   render() {
     return (
       <div className="app-home">
-        <div className="home-bg" />
         <Discover {...this.state} />
       </div>
     )
