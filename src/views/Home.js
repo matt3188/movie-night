@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import {discoverMovies} from '../utils/api';
 import Discover from '../components/Discover'
+import FilterSelection from '../components/FilterSelection'
 
 class Home extends Component {
 
@@ -9,21 +10,35 @@ class Home extends Component {
     super( props );
 
     this.state = {
+      year: '2017',
       results: []
     }
+
+    this.handleTermChange = this.handleTermChange.bind( this );
+  }
+
+  loadMovies( year ) {
+    discoverMovies( year ).then( ( res ) => {
+      this.setState({
+        results: res.results,
+        year: year
+      });
+    });
+  }
+
+  handleTermChange = ( year ) => {
+    this.loadMovies( year );
+    this.setState({ year })
   }
 
   componentDidMount() {
-    discoverMovies('2017').then( ( res ) => {
-      this.setState({
-        results: res.results
-      });
-    });
+    this.loadMovies( this.state.year );
   }
 
   render() {
     return (
       <div className="app-home">
+        <FilterSelection onTermChange={ this.handleTermChange } />
         <Discover {...this.state} />
       </div>
     )
