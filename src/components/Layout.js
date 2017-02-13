@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import NavLink from './NavLink';
 
-import './App.css';
+import './Layout.css';
 
-class App extends Component {
+class Layout extends Component {
   render() {
     return (
       <div>
@@ -18,10 +18,13 @@ class App extends Component {
             </ul>
           </div>
         </div>
-        {this.props.children}
+
+        <div className="app-content">
+          {this.props.children}
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default Layout;
