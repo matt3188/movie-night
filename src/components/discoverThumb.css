@@ -35,4 +35,9 @@
     column-count: 3;
   }
 }
+.average-rating {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.9em;
 }
