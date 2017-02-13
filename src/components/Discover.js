@@ -8,7 +8,7 @@ const Discover = (props) => {
   });
 
   return (
-    <ul className="list home-list">
+    <ul className="list discover-list">
       {moviesList}
     </ul>
   )
