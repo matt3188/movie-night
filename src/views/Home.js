@@ -11,28 +11,34 @@ class Home extends Component {
 
     this.state = {
       year: '2017',
+      page: '1',
       results: []
     }
 
     this.handleTermChange = this.handleTermChange.bind( this );
   }
 
-  loadMovies( year ) {
-    tmdb.discoverMovies( year ).then( ( res ) => {
+  loadMovies( year, page ) {
+    tmdb.discoverMovies( year, page ).then( ( res ) => {
       this.setState({
         results: res.results,
+        page: page,
         year: year
       });
     });
   }
 
-  handleTermChange = ( year ) => {
-    this.loadMovies( year );
-    this.setState({ year })
+  handleTermChange( filterResult ) {
+    console.log(filterResult)
+    let year = filterResult.year;
+    let page = filterResult.page;
+    this.loadMovies(year, page);
+    this.setState(filterResult)
   }
 
+
   componentDidMount() {
-    this.loadMovies( this.state.year );
+    this.loadMovies( this.state.year, this.state.page );
   }
 
   render() {
