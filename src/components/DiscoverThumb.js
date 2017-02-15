@@ -15,7 +15,7 @@ class DiscoverThumb extends Component {
     return (
       <li className="discover-thumb">
         <div className="discover-image">
-          <img alt="" src={image_url + this.props.movie.backdrop_path} />
+          {!!this.props.movie.backdrop_path && <img alt="" src={image_url + this.props.movie.backdrop_path} />}
         </div>
         <div className="discover-overview">
           {!!this.props.movie.vote_average && <div className="average-rating">{this.props.movie.vote_average} ⭑</div>}
