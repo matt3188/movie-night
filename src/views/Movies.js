@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {getMovies} from '../utils/api';
+import {tmdb} from '../utils/api';
 
 import SearchBar from '../components/SearchBar';
 import MovieList from '../components/MovieList'
@@ -16,7 +16,7 @@ class Movie extends Component {
   }
 
   movieLookUp( term ) {
-    getMovies( term ).then( ( res ) => {
+    tmdb.getMovies( term ).then( ( res ) => {
       this.setState({
         movies: res.results
       });

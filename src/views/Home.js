@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {discoverMovies} from '../utils/api';
+import {tmdb} from '../utils/api';
 import Discover from '../components/Discover'
 import FilterSelection from '../components/FilterSelection'
 
@@ -18,7 +18,7 @@ class Home extends Component {
   }
 
   loadMovies( year ) {
-    discoverMovies( year ).then( ( res ) => {
+    tmdb.discoverMovies( year ).then( ( res ) => {
       this.setState({
         results: res.results,
         year: year
