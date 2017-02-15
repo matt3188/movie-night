@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {tmdb} from '../utils/api';
 
 import './discoverThumb.css'
 
@@ -9,7 +10,7 @@ class DiscoverThumb extends Component {
   }
 
   render() {
-    const image_url = 'https://image.tmdb.org/t/p/w500'
+    const image_url = tmdb.image_url + '/w500'
     return (
       <li className="discover-thumb">
         <div className="discover-image">
