@@ -2,7 +2,8 @@ import React from 'react';
 
 import DiscoverThumb from './DiscoverThumb';
 
-const Discover = (props) => {
+const DiscoverList = (props) => {
+
   const moviesList = props.results.map((movie, i) => {
     return <DiscoverThumb key={i} movie={movie} />
   });
@@ -14,4 +15,4 @@ const Discover = (props) => {
   )
 }
 
-export default Discover;
+export default DiscoverList;

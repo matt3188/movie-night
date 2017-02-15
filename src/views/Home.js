@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import {tmdb} from '../utils/api';
-import Discover from '../components/Discover'
+import DiscoverList from '../components/DiscoverList'
 import FilterSelection from '../components/FilterSelection'
 
 class Home extends Component {
@@ -39,7 +39,7 @@ class Home extends Component {
     return (
       <div className="app-home">
         <FilterSelection onTermChange={ this.handleTermChange } />
-        <Discover {...this.state} />
+        <DiscoverList {...this.state} />
       </div>
     )
   }
