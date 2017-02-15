@@ -6,13 +6,16 @@ class FilterSelection extends Component {
     super( props );
 
     this.state = {
-      yearSelected: ''
+      year: '2017',
+      page: '1'
     }
   }
 
-  onInputChange( yearSelected ) {
-    this.setState({ yearSelected })
-    this.props.onTermChange( yearSelected );
+  onInputChange(propertyName, event) {
+    const state = this.state;
+    state[propertyName] = event.target.value;
+    this.setState({[propertyName]: event.target.value });
+    this.props.onTermChange( this.state )
   }
 
   render() {
