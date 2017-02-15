@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './movieThumb.css'
+import { Link } from 'react-router'
 
 class MovieThumb extends Component {
   constructor(props) {
@@ -24,7 +25,9 @@ class MovieThumb extends Component {
       <li className="movie-thumb">
         <a onClick={this.menuToggle} className={this.state.faved ? 'heart faved' : 'heart'}></a>
         <img alt="" src={image_url + this.props.movie.poster_path} />
+        <Link to={{pathname: '/movie/' + this.props.movie.id, state:this.props.movie}}>Find our more</Link>
       </li>
+
     )
   }
 }

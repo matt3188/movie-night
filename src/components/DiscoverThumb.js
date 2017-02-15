@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {tmdb} from '../utils/api';
+import { Link } from 'react-router'
 
 import './discoverThumb.css'
 
@@ -19,6 +20,7 @@ class DiscoverThumb extends Component {
         <div className="discover-overview">
           {!!this.props.movie.vote_average && <div className="average-rating">{this.props.movie.vote_average} ⭑</div>}
           <h2 className="movie-title">{this.props.movie.title}</h2>
+          <Link to={{pathname: '/movie/' + this.props.movie.id, state:this.props.movie}}>Find out more</Link>
         </div>
       </li>
     )
