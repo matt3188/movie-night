@@ -14,6 +14,12 @@ const tmdb = {
     console.log(discover)
 
     return fetch(discover).then((res) => res.json());
+  },
+
+  lookupMovie(movieID) {
+    const grabMovie = `${this.api_url}/movie/${movieID}?api_key=${this.api_key}`
+
+    return fetch(grabMovie).then((res) => res.json());
   }
 }
 

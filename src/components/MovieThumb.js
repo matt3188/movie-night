@@ -25,7 +25,7 @@ class MovieThumb extends Component {
       <li className="movie-thumb">
         <a onClick={this.menuToggle} className={this.state.faved ? 'heart faved' : 'heart'}></a>
         <img alt="" src={image_url + this.props.movie.poster_path} />
-        <Link to={{pathname: '/movie/' + this.props.movie.id, state:this.props.movie}}>Find our more</Link>
+        <Link to={'/movie/' + this.props.movie.id}>Find our more</Link>
       </li>
 
     )
