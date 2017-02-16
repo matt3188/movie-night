@@ -31,7 +31,6 @@ class Home extends Component {
   }
 
   handleTermChange( filterResult ) {
-    console.log(filterResult)
     let year = filterResult.year;
     let page = filterResult.page;
     this.loadMovies(year, page);
