@@ -12,7 +12,9 @@ body {
   background-color: #111215;
   color: #FFF;
 }
-
+a {
+  text-decoration: none;
+}
 .container {
   margin: auto;
   max-width: 980px;
