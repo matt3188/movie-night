@@ -10,8 +10,9 @@ class Home extends Component {
     super( props );
 
     this.state = {
-      year: '2017',
-      page: '1',
+      year: null,
+      page: null,
+      totalPages: null,
       results: []
     }
 
@@ -22,8 +23,9 @@ class Home extends Component {
     tmdb.discoverMovies( year, page ).then( ( res ) => {
       this.setState({
         results: res.results,
-        page: page,
-        year: year
+        totalPages: res.total_pages,
+        year: year,
+        page: page
       });
     });
   }
@@ -33,12 +35,10 @@ class Home extends Component {
     let year = filterResult.year;
     let page = filterResult.page;
     this.loadMovies(year, page);
-    this.setState(filterResult)
   }
 
-
   componentDidMount() {
-    this.loadMovies( this.state.year, this.state.page );
+    this.loadMovies( '2017', '1' );
   }
 
   render() {
