@@ -11,7 +11,6 @@ const tmdb = {
 
   discoverMovies(year, page) {
     const discover = `${this.api_url}/discover/movie?primary_release_year=${year}&page=${page}&include_video=false&include_adult=false&sort_by=popularity.desc&language=en-UK&api_key=${this.api_key}`
-    console.log(discover)
 
     return fetch(discover).then((res) => res.json());
   },
