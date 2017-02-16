@@ -8,4 +8,4 @@ import './index.css';
 
 ReactDOM.render((
   <Router routes={routes} history={hashHistory} />
-),  document.getElementById('root'));
+), document.getElementById('root'));
