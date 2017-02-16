@@ -19,6 +19,10 @@ class Movie extends Component {
     });
   }
 
+  componentDidMount() {
+    this.lookupMovie( this.props.params.id );
+  }
+
   render() {
     const image_url = tmdb.image_url + '/w500'
 
@@ -33,4 +37,3 @@ class Movie extends Component {
 }
 
 export default Movie;
-
