@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
 import {tmdb} from '../utils/api';
+
+import '../components/movie.css';
 
 class Movie extends Component {
 
@@ -16,6 +19,7 @@ class Movie extends Component {
       this.setState({
         movie: res
       })
+      console.log(res)
     });
   }
 
@@ -28,9 +32,13 @@ class Movie extends Component {
 
     return (
       <div className="container">
-        <h1>{this.state.movie.title}</h1>
+        <h1>{this.state.movie.title} - {this.state.movie.release_date}</h1>
+        <div className="movie-info">
+          <p>{this.state.movie.vote_average} ⭑</p>
+          <p>Runtime: {this.state.movie.runtime}mins</p>
+        </div>
         <p>{this.state.movie.overview}</p>
-        <img src={image_url + this.state.movie.backdrop_path} alt={this.state.movie.title} />
+        <img src={image_url + this.state.movie.poster_path} alt={this.state.movie.title} />
       </div>
     )
   }
