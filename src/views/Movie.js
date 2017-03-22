@@ -28,16 +28,30 @@ class Movie extends Component {
   }
 
   render() {
-    const image_url = tmdb.image_url + '/w500'
+    const movieTitle = this.state.movie.title,
+          release = this.state.movie.release_date,
+          movieReleaseDate = release,
+          image_url = tmdb.image_url + '/w500',
+          averageRating = this.state.movie.vote_average + ' ⭑',
+          runTime = 'Runtime: ' + this.state.movie.runtime + 'mins',
+          overview = this.state.movie.overview;
 
     return (
       <div className="container">
-        <h1>{this.state.movie.title} - {this.state.movie.release_date}</h1>
+        {this.state.movie.title ? (
+          <h1>{movieTitle} - {movieReleaseDate}</h1>
+        ) : <h1>TBC</h1> }
         <div className="movie-info">
-          <p>{this.state.movie.vote_average} ⭑</p>
-          <p>Runtime: {this.state.movie.runtime}mins</p>
+          { this.state.movie.vote_average ? (
+            <p>{averageRating}</p>
+          ) : null }
+          { this.state.movie.runtime ? (
+            <p>{runTime}</p>
+          ) : null }
         </div>
-        <p>{this.state.movie.overview}</p>
+        { this.state.movie.overview ? (
+          <p>{overview}</p>
+        ) : null}
         <img src={image_url + this.state.movie.poster_path} alt={this.state.movie.title} />
       </div>
     )
