@@ -28,31 +28,22 @@ class Movie extends Component {
   }
 
   render() {
-    const movieTitle = this.state.movie.title,
-          release = this.state.movie.release_date,
-          movieReleaseDate = release,
-          image_url = tmdb.image_url + '/w500',
-          averageRating = this.state.movie.vote_average + ' ⭑',
-          runTime = 'Runtime: ' + this.state.movie.runtime + 'mins',
-          overview = this.state.movie.overview;
+    const image_url = tmdb.image_url + '/w500';
 
     return (
       <div className="container">
-        {this.state.movie.title ? (
-          <h1>{movieTitle} - {movieReleaseDate}</h1>
-        ) : <h1>TBC</h1> }
+
+        { this.state.movie.title ? <h1>{this.state.movie.title} - {this.state.movie.release_date}</h1> : null }
+
         <div className="movie-info">
-          { this.state.movie.vote_average ? (
-            <p>{averageRating}</p>
-          ) : null }
-          { this.state.movie.runtime ? (
-            <p>{runTime}</p>
-          ) : null }
+          { this.state.movie.vote_average ? <p>{this.state.movie.vote_average} ⭑</p> : null }
+
+          { this.state.movie.runtime ? <p>{this.state.movie.runtime}mins</p> : null }
         </div>
-        { this.state.movie.overview ? (
-          <p>{overview}</p>
-        ) : null}
-        <img src={image_url + this.state.movie.poster_path} alt={this.state.movie.title} />
+
+        { this.state.movie.overview ? <p>{ this.state.movie.overview }</p> : null }
+
+        { this.state.movie.poster_path ? <img src={image_url + this.state.movie.poster_path} alt={this.state.movie.title} /> : null }
       </div>
     )
   }
